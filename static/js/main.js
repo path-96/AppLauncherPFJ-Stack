@@ -61,23 +61,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Edit shortcut
   document.querySelectorAll('.edit-shortcut-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const projectIdx = btn.getAttribute('data-project');
-      const shortcutIdx = btn.getAttribute('data-shortcut');
-      const newName = prompt('Enter new shortcut name:');
-      if (newName) {
-        fetch(`/edit_shortcut/${projectIdx}/${shortcutIdx}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: newName })
-        }).then(() => location.reload());
-      }
-    });
+  btn.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent card click
+    const projectIdx = btn.getAttribute('data-project');
+    const shortcutIdx = btn.getAttribute('data-shortcut');
+    const newName = prompt('Enter new shortcut name:');
+    if (newName) {
+      fetch(`/edit_shortcut/${projectIdx}/${shortcutIdx}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: newName })
+      }).then(() => location.reload());
+    }
   });
+});
 
   // Delete shortcut
   document.querySelectorAll('.delete-shortcut-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent card click
       const projectIdx = btn.getAttribute('data-project');
       const shortcutIdx = btn.getAttribute('data-shortcut');
       if (confirm('Delete this shortcut?')) {
