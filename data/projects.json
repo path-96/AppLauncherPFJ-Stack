@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Project 1",
+    "shortcuts": [
+      {
+        "name": "Notepad",
+        "path": "C:\\Windows\\notepad.exe"
+      },
+      {
+        "name": "Omoron",
+        "path": "C:\\Program Files (x86)\\OMRON\\CX-One\\Network Configurator\\Program\\NetConfigurator.exe"
+      }
+    ]
+  },
+  {
+    "name": "Project 2",
+    "shortcuts": [
+      {
+        "name": "Calculator",
+        "path": "C:\\Windows\\System32\\calc.exe"
+      }
+    ]
+  },
+  {
+    "name": "\u691c\u67fb\u88c5\u7f6e",
+    "shortcuts": []
+  }
+]
